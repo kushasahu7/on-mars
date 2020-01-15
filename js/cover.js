@@ -61,6 +61,7 @@ class Cover {
 	}
 	
 	start() {
+		this.updatePhoto();
 		// get location
 		if (!navigator.geolocation){
 		  throw "Geolocation not supported!";
@@ -75,7 +76,7 @@ class Cover {
 		  this.lat = position.coords.latitude;
 		  this.lon = position.coords.longitude;
 		  console.log(this.lat, this.lon);
-		  this.updatePhoto();
+		  
 		}.bind(this), error);
 		this.setTime();
 		this.render();
